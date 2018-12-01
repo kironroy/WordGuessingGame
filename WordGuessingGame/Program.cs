@@ -1,12 +1,19 @@
-﻿using System;
+﻿using System.Globalization;
+using System.Collections.Generic;
+
 
 namespace WordGuessingGame
+
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+           //CenterText.centerText("hi");
+           Game theGame = new Game();
+           theGame.Play();
         }
+
+      
     }
 }

@@ -4,7 +4,7 @@ namespace WordGuessingGame
 {
     class Game
     {
-        int guess = 0;
+        
         int targetNumber = 5;
         string userInput = "";
         string[] wordsArray = { "cat", "rat", "bat"};
@@ -15,15 +15,16 @@ namespace WordGuessingGame
             targetNumber = RandomNumber.Next(wordsArray.Length);
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            CenterText.centerText(" Guess which word I am thinking of is it: cat, rat, or bat ");
-           
-            //for (int i = 0; i < wordsArray.Length; i++)
-            //{
-            //    if (i == (wordsArray.Length - 1))
-            //        CenterText.centerText("or " + wordsArray[i] + "? ");
-            //    else
-            //        Console.Write(wordsArray[i] + ", ");
-            //}
+            CenterText.centerText("Guess which word I am thinking:");
+
+
+            for (int i = 0; i < wordsArray.Length; i++)
+            {
+                if (i == (wordsArray.Length - 1))
+                    CenterText.centerText("or " + wordsArray[i] + "? ");
+                else
+                    CenterText.centerText(wordsArray[i] + ", ");
+            }
 
             userInput = Console.ReadLine().Trim().ToLower();
 
@@ -35,15 +36,15 @@ namespace WordGuessingGame
             {
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Red;
-                CenterText.centerText("Not a match. Try again! Press enter continue");
-                //CenterText.centerText("Press enter to continue...");
+                CenterText.centerText("Not a match. Try again!");
+                CenterText.centerText("Please press enter . . .");
                 Console.ReadLine();
                 Console.Clear();
                 Play();
             }
 
             
-            //Console.Read();
+            
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace WordGuessingGame
 {
-    class Game
+    public class Game
     {
         
         int targetNumber = 5;
